@@ -11,11 +11,11 @@ Holds various files and procedure to upgrade ListenBrainz Timescale installation
   ```
 - Create new volume for timescale data
   ```shell
-  docker volume create --driver local listenbrainz-timescale-data-13
+  docker volume create --driver local listenbrainz-timescale-pg13-data
   ```
 - Run a container from the previously built image with the old and new volumes mounted
   ```shell
-  docker run -it -v listenbrainz_timescaledb:/var/lib/postgresql/old -v listenbrainz-timescale-data-13:/var/lib/postgresql/new -u postgres meb-ts-upgrade bash
+  docker run -it -v listenbrainz-timescale-data:/var/lib/postgresql/old -v listenbrainz-timescale-pg13-data:/var/lib/postgresql/new -u postgres meb-ts-upgrade bash
   ```
 - Init a new database cluster
   ```shell
