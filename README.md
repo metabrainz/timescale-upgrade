@@ -25,6 +25,10 @@ Holds various files and procedure to upgrade ListenBrainz Timescale installation
     --username postgres \
     --pgdata $PGDATANEW
   ```
+- Copy over old cluster configuration
+  ```shell
+  cp $PGDATAOLD/postgresql.conf $PGDATANEW/postgresql.conf
+  ```
 - Run pg_upgrade with checks  
   ```shell
   $PGBINNEW/pg_upgrade \
