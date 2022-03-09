@@ -41,3 +41,14 @@ Holds various files and procedure to upgrade ListenBrainz Timescale installation
     --username=postgres \
     --verbose
   ```
+- Run pg_upgrade for migration
+  ```shell
+  $PGBINNEW/pg_upgrade \
+    --old-bindir=$PGBINOLD \
+    --new-bindir=$PGBINNEW \
+    --old-datadir=$PGDATAOLD \
+    --new-datadir=$PGDATANEW \
+    --jobs=6 \
+    --username=postgres \
+    --verbose
+  ```
